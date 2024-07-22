@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400..700;1,400..700&display=swap');
+
+*, *::before, *::after {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: "Familjen Grotesk", sans-serif;
+    color:white;
+    background: black;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+ul{
+    list-style: none;
+}
+
+.main-header{
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:3;
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    height:100px;
+    padding:0 30px;
+}
+
+.logo{
+    width: 210px;
+    height: auto;
+}
+
+.logo img{
+    display: block;
+    width:100%;
+    height:auto;
+}
+
+.navbar{
+    margin-right: 50px;
+}
+
+.navbar ul{
+    display: flex;
+}
+
+.navbar ul li{
+    position: relative;
+    margin-right:20px;
+    padding-bottom: 2px;
+}
+
+/*underline part*/
+
+.navbar ul li a::after{
+    content: '';
+    position: absolute; /*The position: relative; property makes the list items a positioning context for absolutely positioned elements inside them. This means that any child elements with position: absolute; will be positioned relative to the .navbar ul li elements.*/
+    bottom: 0;
+    left:0;
+    width:100%;
+    height:0.75px;
+    background: white;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in;
+    transform-origin: right;
+}
+
+.navbar ul li a:hover::after{
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+section{ /*applying similiar styles to all sections*/
+    position: relative;
+    text-transform: uppercase;
+    height:100vh;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sec-inner{
+    position: absolute;
+    bottom:100px;
+    left:50px;
+    max-width:560px;
+}
+
+.sec-inner h4{
+    font-size: 22px;
+    margin-bottom: 5px;
+    font-weight: 300;
+}
+
+.sec-inner h2{
+    font-size:50px;
+    font-weight:700;
+    margin-bottom: 20px;
+}
+
+/*button start*/
+
+.sec-inner a{
+    background: none;
+    border: 2px white solid;
+    padding:15px 40px 15px 40px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color:white;  
+    position: relative;  
+    transition: all 0.25s ease-in-out 0s;
+}
+
+.sec-inner a::before{
+    content: '';
+    background-color: white;
+    position: absolute;
+    left:0;
+    right: 0;
+    bottom: 0;
+    top:0;
+    transition: all 0.25s ease-in-out 0s;
+    z-index: -1;
+}
+
+.sec-inner a{
+    z-index: 1;
+}
+
+.sec-inner a::before{
+    height:0;
+}
+
+.sec-inner a:hover{
+    color: black;
+}
+
+.sec-inner a:hover::before{
+    top:unset;
+    bottom: 0;
+    height: 100%;
+}
+
+/*button end*/
+
+
+/*Background images*/
+.secA{
+    background-image: url("/img/SectionA1.jpg");
+}
+
+.secB{
+    background-image: url("/img/SectionB.jpg");
+}
+
+.secC{
+    background-image: url("/img/SectionC.jpg");
+}
+
+.secD{
+    background-image: url("/img/SectionD.jpg");
+}
+
+.secE{
+    background-image: url("/img/SectionE.jpg");
+}
+
+/*background images end*/
+
+footer{
+    position: relative;
+    padding: 35px 0;
+}
+
+footer ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+footer ul li{
+    color: white;
+    margin-right:20px;
+    text-transform: uppercase;
+    font-size: 13px;
+    line-height: 2.5;
+}
+
+.footbold{
+    font-weight: 600;
+    transition: color 0.2s ease-in 0s;
+}
+
+.footbold:hover{
+    color:gray;
+}
